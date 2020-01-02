@@ -19,7 +19,6 @@ import math
 import cv2
 # %matplotlib inline
 
-import cv2
 import keras
 from keras.layers import Conv2D, Flatten, MaxPooling2D, Dropout, Dense
 from keras.layers.normalization import BatchNormalization
