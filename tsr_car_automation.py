@@ -152,7 +152,7 @@ print(model_conv.summary())
 model_conv.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 filepath = "bestweights.hdf5"
-checkpoint_conv = ModelCheckpoint(filepath, monitor = "acc", verbose = 1, save_best_only = True, mode = "max")
+checkpoint_conv = ModelCheckpoint(filepath, monitor = "val_loss", verbose = 1, save_best_only = True, mode = "min")
 callbacks_list = [checkpoint_conv]
 
 model_conv.fit(train_images, train_labels, batch_size=32, epochs = 20, validation_data=(val_images, val_labels), callbacks = callbacks_list)
